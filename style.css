@@ -1,3 +1,97 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+    background-color: #E5E5E5;
+    font-family: 'Roboto', sans-serif;
+}
+
+strong {
+    font-weight: bold;
+}
+
+p {
+    font-size: 14px;
+    word-wrap: break-word;
+    line-height: 1.2;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: #FFFFFF;
+    padding: 0 22px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.header img {
+    height: 53px;
+    width: auto;
+}
+
+.header ion-icon {
+    font-size: 53px;
+}
+
+.message-box {
+    width: 100%;
+    height: 80px;
+    background-color: #FFFFFF;
+    padding: 0 20px;
+    box-shadow: 0 -4px 6px rgb(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+}
+
+.message-box input {
+    border: 0 solid #000000;
+}
+
+.message-box input::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #000000;
+    font-style: italic;
+}
+
+.message-box ion-icon {
+    font-size: 35px;
+}
+
+.chat-log {
+    margin: 106px 0;
+    overflow-y: scroll;
+}
+
+.message {
+    padding: 18px;
+    margin: 2px 0;
+}
+
+.status {
+    background-color: #DCDCDC;
+}
+
+.reserved {
+    background-color: #FFDEDE;
+}
+
+.regular {
+    background-color: #FFFFFF;
+}
+
+.timestamp {
+    color: #AAAAAA;
+    font-weight: 400;
+}
