@@ -15,7 +15,6 @@ function getUser() {
         name: user
     });
     request.then(function() {
-        messageButton.addEventListener("keyup", clickMessageButton);
         document.querySelector(".login-screen").style.display = "none";
     });
     request.then(getChat);
@@ -29,6 +28,7 @@ function getUser() {
     }, 5000));
     request.catch(function() {
         alert("Usuário já conectado:");
+        sendUserButton.addEventListener("keyup", clickUserButton);
     });
 }
 
@@ -63,7 +63,7 @@ function loadChat(element) {
                 }
                 break;
             default:
-                console.log("esse tipo existe não man");
+                console.log(`Esse tipo da mensagem ${i} não existe`);
         }
     }
     chat.lastChild.scrollIntoView();
@@ -146,8 +146,8 @@ function selectType(element) {
 }
 
 function sendMessage() {
-    messageButton.addEventListener("keyup", clickMessageButton);
     const message = document.querySelector(".message-text").querySelector("input");
+    if(message.value === "") return;
     const request = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', {
         from: user,
         to: receiver,
@@ -168,7 +168,7 @@ function clickMessageButton(event) {
     if (event.keyCode === 13)
     {
         event.preventDefault();
-        document.querySelector(".message-box").querySelector("ion-icon").click();
+        document.querySelector(".message-box").querySelector("button").click();
     }
 }
 
@@ -181,3 +181,4 @@ function clickUserButton(event) {
 }
 
 sendUserButton.addEventListener("keyup", clickUserButton);
+messageButton.addEventListener("keyup", clickMessageButton);

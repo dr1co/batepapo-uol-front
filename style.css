@@ -74,6 +74,11 @@ p {
     font-style: italic;
 }
 
+.message-box button {
+    background-color: transparent;
+    border: 0 solid #000000;
+}
+
 .message-box ion-icon {
     font-size: 35px;
 }
