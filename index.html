@@ -14,14 +14,45 @@
 <body>
     <div class="header">
         <img src="/img/logo.png" />
-        <ion-icon name="people"></ion-icon>
+        <ion-icon name="people" onclick="toggleSidebar()"></ion-icon>
     </div>
     <ul class="chat-log">
         
     </ul>
     <div class="message-box">
-        <input type="text" placeholder="Escreva aqui...">
+        <div class="message-text">
+            <input type="text" placeholder="Escreva aqui...">
+        </div>
         <ion-icon name="paper-plane-outline" onclick="sendMessage()"></ion-icon>
+    </div>
+    <div class="background" onclick="toggleSidebar()"></div>
+    <div class="sidebar">
+        <h1> Escolha um contato <br> para enviar mensagem: </h1>
+        <ul class="users-list">
+            <li class="user selected" onclick="selectUser(this)">
+                <ion-icon class="user-icon" name="people"></ion-icon>
+                <p>Todos</p>
+                <ion-icon class="check-icon show" name="checkmark-sharp"></ion-icon>
+            </li>
+        </ul>
+        <h1> Escolha a visibilidade </h1>
+        <ul class="type-list">
+            <li class="type selected" data-identifier="visibility" onclick="selectType(this)">
+                <ion-icon class="type-icon" name="lock-open"></ion-icon>
+                <p>Público</p>
+                <ion-icon class="check-icon show" name="checkmark-sharp"></ion-icon>
+            </li>
+            <li class="type" data-identifier="visibility" onclick="selectType(this)">
+                <ion-icon class="type-icon" name="lock-closed"></ion-icon>
+                <p>Reservadamente</p>
+                <ion-icon class="check-icon" name="checkmark-sharp"></ion-icon>
+            </li>
+        </ul>
+    </div>
+    <div class="login-screen">
+        <img src="/img/logo.png" />
+        <input type="text" data-identifier="enter-name" placeholder="Digite seu nome">
+        <button onclick="getUser()" data-identifier="start"> Entrar </button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
