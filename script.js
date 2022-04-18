@@ -20,7 +20,6 @@ function errorTreatment() {
 }
 
 function getChat() {
-    console.log("carregando chat");
     const promise = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
     promise.then(loadChat);
 }
@@ -54,7 +53,26 @@ function loadChat(element) {
                 console.log("esse tipo existe não man");
         }
     }
-    chat.lastChild.scrollIntoView()
+    chat.lastChild.scrollIntoView();
+}
+
+function sendMessage() {
+    const message = document.querySelector("input");
+    let receiver = "Todos"
+    const request = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', {
+        from: user,
+        to: receiver,
+        text: message.value,
+        type: "message",
+    });
+    request.then(function() {
+        getChat();
+        message.value = "";
+    });
+    request.catch(function() {
+        alert("Erro! Usuário não encontrado");
+        window.location.reload()
+    });
 }
 
 getUser();
