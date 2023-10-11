@@ -1,8 +1,9 @@
 let user;
 let receiver = "Todos"
 let messageType = "message"
-let messageButton = document.querySelector(".message-text").querySelector("input")
-let sendUserButton = document.querySelector(".login-screen").querySelector("input")
+const messageButton = document.querySelector(".message-text").querySelector("input")
+const sendUserButton = document.querySelector(".login-screen").querySelector("input")
+const apiBaseUrl = 'https://mock-api.driven.com.br/api/v6/uol'
 
 function getUser() {
     user = document.querySelector(".login-screen").querySelector("input").value;
@@ -11,7 +12,7 @@ function getUser() {
         alert("Nome de usuário vazio: tente novamente");
         return;
     }
-    const request = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', {
+    const request = axios.post(`${apiBaseUrl}/participants`, {
         name: user
     });
     request.then(function() {
@@ -22,7 +23,7 @@ function getUser() {
     request.then(getParticipants);
     request.then(setInterval(getParticipants, 10000));
     request.then(setInterval(function() {
-        axios.post('https://mock-api.driven.com.br/api/v6/uol/status', {
+        axios.post(`${apiBaseUrl}/status`, {
             name: user
         })
     }, 5000));
@@ -33,7 +34,7 @@ function getUser() {
 }
 
 function getChat() {
-    const promise = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
+    const promise = axios.get(`${apiBaseUrl}/messages`);
     promise.then(loadChat);
 }
 
@@ -70,7 +71,7 @@ function loadChat(element) {
 }
 
 function getParticipants() {
-    const promise = axios.get('https://mock-api.driven.com.br/api/v6/uol/participants');
+    const promise = axios.get(`${apiBaseUrl}/participants`);
     promise.then(loadParticipants);
 }
 
@@ -148,7 +149,7 @@ function selectType(element) {
 function sendMessage() {
     const message = document.querySelector(".message-text").querySelector("input");
     if(message.value === "") return;
-    const request = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', {
+    const request = axios.post(`${apiBaseUrl}/messages`, {
         from: user,
         to: receiver,
         text: message.value,
