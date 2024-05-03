@@ -1,61 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <title>Bate-Papo UOL</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <title>Bate-Papo UOL</title>
 </head>
+
 <body>
-    <div class="header">
-        <img src="/img/logo.png" />
-        <ion-icon name="people" onclick="toggleSidebar()"></ion-icon>
+  <div class="header">
+    <img src="/img/logo.png" />
+    <ion-icon name="people" onclick="toggleSidebar()"></ion-icon>
+  </div>
+  <ul class="chat-log">
+
+  </ul>
+  <div class="message-box">
+    <div class="message-text">
+      <input type="text" placeholder="Escreva aqui...">
     </div>
-    <ul class="chat-log">
-        
+    <button onclick="sendMessage()"><ion-icon name="paper-plane-outline"></ion-icon></button>
+  </div>
+  <div class="background" onclick="toggleSidebar()"></div>
+  <div class="sidebar">
+    <h1> Escolha um contato <br> para enviar mensagem: </h1>
+    <ul class="users-list">
+      <li class="user selected" onclick="selectUser(this)">
+        <ion-icon class="user-icon" name="people"></ion-icon>
+        <p>Todos</p>
+        <ion-icon class="check-icon show" name="checkmark-sharp"></ion-icon>
+      </li>
     </ul>
-    <div class="message-box">
-        <div class="message-text">
-            <input type="text" placeholder="Escreva aqui...">
-        </div>
-        <button onclick="sendMessage()"><ion-icon name="paper-plane-outline"></ion-icon></button>
-    </div>
-    <div class="background" onclick="toggleSidebar()"></div>
-    <div class="sidebar">
-        <h1> Escolha um contato <br> para enviar mensagem: </h1>
-        <ul class="users-list">
-            <li class="user selected" onclick="selectUser(this)">
-                <ion-icon class="user-icon" name="people"></ion-icon>
-                <p>Todos</p>
-                <ion-icon class="check-icon show" name="checkmark-sharp"></ion-icon>
-            </li>
-        </ul>
-        <h1> Escolha a visibilidade </h1>
-        <ul class="type-list">
-            <li class="type selected" data-identifier="visibility" onclick="selectType(this)">
-                <ion-icon class="type-icon" name="lock-open"></ion-icon>
-                <p>Público</p>
-                <ion-icon class="check-icon show" name="checkmark-sharp"></ion-icon>
-            </li>
-            <li class="type" data-identifier="visibility" onclick="selectType(this)">
-                <ion-icon class="type-icon" name="lock-closed"></ion-icon>
-                <p>Reservadamente</p>
-                <ion-icon class="check-icon" name="checkmark-sharp"></ion-icon>
-            </li>
-        </ul>
-    </div>
-    <div class="login-screen">
-        <img src="/img/logo.png" />
-        <input type="text" data-identifier="enter-name" placeholder="Digite seu nome">
-        <button onclick="getUser()" data-identifier="start"> Entrar </button>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <script src="script.js"></script>
+    <h1> Escolha a visibilidade </h1>
+    <ul class="type-list">
+      <li class="type selected" data-identifier="visibility" onclick="selectType(this)">
+        <ion-icon class="type-icon" name="lock-open"></ion-icon>
+        <p>Público</p>
+        <ion-icon class="check-icon show" name="checkmark-sharp"></ion-icon>
+      </li>
+      <li class="type" data-identifier="visibility" onclick="selectType(this)">
+        <ion-icon class="type-icon" name="lock-closed"></ion-icon>
+        <p>Reservadamente</p>
+        <ion-icon class="check-icon" name="checkmark-sharp"></ion-icon>
+      </li>
+    </ul>
+  </div>
+  <div class="login-screen">
+    <img src="/img/logo.png" />
+    <input type="text" data-identifier="enter-name" placeholder="Digite seu nome">
+    <button onclick="getUser()" data-identifier="start"> Entrar </button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

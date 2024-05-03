@@ -1,236 +1,237 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #E5E5E5;
-    font-family: 'Roboto', sans-serif;
+  background-color: #E5E5E5;
+  font-family: 'Roboto', sans-serif;
 }
 
 strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 h1 {
-    font-size: 20px;
-    font-weight: bold;
-    word-wrap: break-word;
-    line-height: 1.2;
-    text-align: center;
-    padding: 24px 0;
+  font-size: 20px;
+  font-weight: bold;
+  word-wrap: break-word;
+  line-height: 1.2;
+  text-align: center;
+  padding: 24px 0;
 }
 
 p {
-    font-size: 14px;
-    word-wrap: break-word;
-    line-height: 1.2;
+  font-size: 14px;
+  word-wrap: break-word;
+  line-height: 1.2;
 }
 
 .header {
-    width: 100%;
-    height: 80px;
-    background-color: #FFFFFF;
-    padding: 0 22px;
-    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    z-index: 1;
+  width: 100%;
+  height: 80px;
+  background-color: #FFFFFF;
+  padding: 0 22px;
+  box-shadow: 0 4px 6px rgb(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 .header img {
-    height: 53px;
-    width: auto;
+  height: 53px;
+  width: auto;
 }
 
 .header ion-icon {
-    font-size: 53px;
-    cursor: pointer;
+  font-size: 53px;
+  cursor: pointer;
 }
 
 .message-box {
-    width: 100%;
-    height: 80px;
-    background-color: #FFFFFF;
-    padding: 0 20px;
-    box-shadow: 0 -4px 6px rgb(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    z-index: 1;
+  width: 100%;
+  height: 80px;
+  background-color: #FFFFFF;
+  padding: 0 20px;
+  box-shadow: 0 -4px 6px rgb(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
 }
 
 .message-box input {
-    border: 0 solid #000000;
+  border: 0 solid #000000;
 }
 
 .message-box input::placeholder {
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    color: #000000;
-    font-style: italic;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #000000;
+  font-style: italic;
 }
 
 .message-box button {
-    background-color: transparent;
-    border: 0 solid #000000;
-    cursor: pointer;
+  background-color: transparent;
+  border: 0 solid #000000;
+  cursor: pointer;
 }
 
 .message-box ion-icon {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 .message-text p {
-    color: gray;
+  color: gray;
 }
 
 .chat-log {
-    margin: 106px 0;
-    overflow-y: scroll;
+  margin: 106px 0;
+  overflow-y: scroll;
 }
 
 .message {
-    padding: 18px;
-    margin: 2px 0;
+  padding: 18px;
+  margin: 2px 0;
 }
 
 .status {
-    background-color: #DCDCDC;
+  background-color: #DCDCDC;
 }
 
 .reserved {
-    background-color: #FFDEDE;
+  background-color: #FFDEDE;
 }
 
 .regular {
-    background-color: #FFFFFF;
+  background-color: #FFFFFF;
 }
 
 .timestamp {
-    color: #AAAAAA;
-    font-weight: 400;
+  color: #AAAAAA;
+  font-weight: 400;
 }
 
 .background {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 2;
-    background-color: rgb(0, 0, 0, 0.60);
-    display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-color: rgb(0, 0, 0, 0.60);
+  display: none;
 }
 
 .sidebar {
-    width: 70%;
-    height: 100%;
-    padding: 0 18px;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 3;
-    background-color: #FFFFFF;
-    display: none;
+  width: 70%;
+  height: 100%;
+  padding: 0 18px;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  background-color: #FFFFFF;
+  display: none;
 }
 
 .show {
-    display: inline;
+  display: inline;
 }
 
 .users-list {
-    max-height: 70%;
-    overflow-y: scroll;
+  max-height: 70%;
+  overflow-y: scroll;
 }
 
 .user {
-    display: flex;
-    padding: 6px 0;
-    align-items: center;
-    position: relative;
+  display: flex;
+  padding: 6px 0;
+  align-items: center;
+  position: relative;
 }
 
 .user-icon {
-    font-size: 30px;
-    padding-right: 10px;
+  font-size: 30px;
+  padding-right: 10px;
 }
 
 .user p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .type {
-    display: flex;
-    padding: 6px 0;
-    align-items: center;
-    position: relative;
+  display: flex;
+  padding: 6px 0;
+  align-items: center;
+  position: relative;
 }
 
 .type-icon {
-    font-size: 30px;
-    padding-right: 10px;
+  font-size: 30px;
+  padding-right: 10px;
 }
 
 .type p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .check-icon {
-    font-size: 18px;
-    color: #28BB25;
-    position: absolute;
-    right: 0;
-    display: none;
+  font-size: 18px;
+  color: #28BB25;
+  position: absolute;
+  right: 0;
+  display: none;
 }
 
 .show {
-    display: flex;
+  display: flex;
 }
 
 .login-screen {
-    background-color: #FFFFFF;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-screen img {
-    width: 150px;
-    height: auto;
-    position: absolute;
-    top: 16%;
+  width: 150px;
+  height: auto;
+  position: absolute;
+  top: 16%;
 }
+
 .login-screen input {
-    padding: 20px 40px;
-    font-size: 20px;
-    text-align: center;
-    border: 1px solid #D7D7D7;
-    border-radius: 4px;
+  padding: 20px 40px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #D7D7D7;
+  border-radius: 4px;
 }
 
 .login-screen input::placeholder {
-    font-size: 20px;
-    color: #AEAEAE;
+  font-size: 20px;
+  color: #AEAEAE;
 }
 
 .login-screen button {
-    background-color: #E7E7E7;
-    margin: 25px;
-    padding: 12px 28px;
-    border: 0px solid #000000;
-    border-radius: 9px;
-    color: #696969;
-    font-size: 20px;
-    cursor: pointer;
+  background-color: #E7E7E7;
+  margin: 25px;
+  padding: 12px 28px;
+  border: 0px solid #000000;
+  border-radius: 9px;
+  color: #696969;
+  font-size: 20px;
+  cursor: pointer;
 }
